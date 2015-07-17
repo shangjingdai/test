@@ -109,6 +109,14 @@ hosts文件就在C:\Windows\system32\drivers\etc\hosts下
 
 没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
 
+将当前工作区推送到远程分支（若远程分支不存在则新建）
+
+git push origin2 head:newbranch_name
+
+删除远程分支
+
+git push origin2 :newbranch_name
+
 可以通过创建~/.gitignore_global并添加到git全局配置以减少每层目录的规则重复定义。
 
 使用命令git config --global core.excludesfile ~/.gitignore_global 即可
