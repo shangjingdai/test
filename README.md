@@ -157,39 +157,14 @@ ehthumbs.db
 Thumbs.db  
 run.sh
 
-# site_limit 站点资源量限制表
+#chinajoy_ticket_code 
+#chinajoy票号数据
 
 ## 属性描述
 
 | name | type | length | can be null | default | desc | dict |
 | ---- | ---- | ------ | ----------- | ------- | ---- | ---- |
-| site_id | bigint(10) | - | No | - | 站点ID，主键 |-|
-| app_name | varchar(200) | - | No | - | 轻应用名称 | - |
-| app_logo | varchar(200) | - | No | - | 轻应用logo url | - |
-| app_query | varchar(45) | - | No | - | 轻应用关键词 | - |
-| app_url | varchar(200) | - | No | - |轻应用首页url | - |
-| app_desc | varchar(200) | - | No | - | 轻应用描述信息 | - |
-| email | varchar(45) | - | No | - | 服务商商户邮箱地址 | - |
-| phone | varchar(45) | - | No | - | 服务商商户手机号码 | - |
-| app_id |varchar(200) | - | YES | NULL | 轻应用id | - |
-| app_status | tinyint(1) | - | YES | NULL | 轻应用状态 | 2审核中3审核不通过4审核通过7管理员下线9管理员删除 |
-| create_time | int(10) | - | No | - | 新建时间 | - |
-| update_time | int(10) | - | No | - | 更新时间 | - |
-| status | tinyint(10) | - | No | - | 状态 | 0删除 1正常 |
-| app_verify_code | varchar(200) | - | No | - | 用于加载统计监控js的验证code | - |
-| app_monitor_code | varchar(200) | - | No | - | 用户加载监控js的code | - |
-| verification_commit_time | int(10) | - | No | - | 审核提交时间 | - |
-| verification_finish_time | int(10) | - | No | - | 审核结束时间 | - |
-
-## 索引
-| name | columns | desc |
-| ---- | ------- | ---- |
-|
-
-## 缓存
-| key | type | desc |
-| --- | ---- | ---- |
-|
-## 备注
-1. 索引和缓存相关信息将来补充
-
+| id | bigint(10) | - | No | - | ID，主键,自增长 |- |
+| code | varchar(50) | - | No | - | 门票编码 | - |
+| is_used | tinyint(1) | - | No | - | 是否使用 | 0未使用1已使用 |
+| ticket_type | tinyint(1) | - | No | 0 | 票类型 | 0(2015年7月30日)1(2015年7月31日)2(2015年8月1日)3(2015年8月2日) |
