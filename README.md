@@ -157,14 +157,23 @@ ehthumbs.db
 Thumbs.db  
 run.sh
 
-#chinajoy_ticket_code 
-#chinajoy票号数据
+# chinajoy_ticket_order
+#chinajoy票务订单记录
 
 ## 属性描述
 
 | name | type | length | can be null | default | desc | dict |
 | ---- | ---- | ------ | ----------- | ------- | ---- | ---- |
-| id | bigint(10) | - | No | - | ID，主键,自增长 |- |
-| code | varchar(50) | - | No | - | 门票编码 | - |
-| is_used | tinyint(1) | - | No | - | 是否使用 | 0未使用1已使用 |
-| ticket_type | tinyint(1) | - | No | 0 | 票类型 | 0(2015年7月30日)1(2015年7月31日)2(2015年8月1日)3(2015年8月2日) |
+| out_trade_no | bigint(10) | - | No | - | 商户订单号，主键，唯一 | - |
+| trade_no | varchar(45) | - | YES | NULL | 支付宝交易号 | - |
+| user_id | varchar(45) | - | No | - | 支付宝用户id | - |
+| subject | varchar(100) | - | No | - | 商品名称 |- |
+| total_fee | varchar(45) | - | No | - | 金额 | - |
+| status | tinyint(1) | - | No | - | 订单状态 | 1正在处理2成功3失败 |
+| ticket_type | tinyint(1) | - | No | - | 票类型 | 0(2015年7月30日)1(2015年7月31日)2(2015年8月1日)3(2015年8月2日) |
+| ticket_num | int(10) | - | No | - | 票的张数 | - |
+| price_per_unit | int(10) | - | No | - | 票的单价 | - |
+| create_time | int(10) | - | No | - | 创建时间 | - |
+| update_time | int(10) | - | No | - | 更新时间 | - |
+| ticket_code | varchar(500) | - | No | - | 门票编码 | 用json字符串存储 |
+
