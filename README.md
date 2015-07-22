@@ -157,18 +157,34 @@ ehthumbs.db
 Thumbs.db  
 run.sh
 
+# site_limit 站点资源量限制表
+
+## 属性描述
+
 | name | type | length | can be null | default | desc | dict |
 | ---- | ---- | ------ | ----------- | ------- | ---- | ---- |
-| page_id | bigint(10) | - | No | - | 页面ID，主键 | 随机数1000000000-9999999999 |
-| site_id | bigint(10) | - | No | - | 页面所属站点的id | - |
-| page_url | varchar(50) | - | No | - | 页面URL字符串 | - |
-| type | tinyint(1) | - | No | - | 页面类型 | 0:blank, 1:blank_template, 2:post, 3:post_template,4: poster,5: post_category |
-| tag_id | int(10) | - | No | 0 | 标签ID，用于分类 | - |
-| title | varchar(50) | - | No | - | 页面标题 | - |
-| seo_keyword | varchar(50) | - | No | - | 站点SEO关键词 | - |
-| seo_description | varchar(100) | - | No | - | 站点SEO描述 | - |
-| status | tinyint(1) | - | No | 1 | 页面状态 |  1 草稿, 2提交待审核(预留状态，暂时不用), 3审核通过并发布, 4审核未通过, 5删除,6下线 |
-| create_time | int(10) | - | No | 0 | 创建时间 | - |
-| update_time | int(10) | - | No | 0 | 更新时间 | - |
-| publish_time | int(10) | - | No | 0 | 发布时间 | - |
+| site_id | bigint(10) | - | No | - |  站点ID，主键 | - |
+| n_page | int(10) | - | No | 100 | 上限：页面的总数量 | - |
+| s_page | int(10) | - | No | 0 | 实际：页面的总数量 | - |
+| n_blank | int(10) | - | No | 100 | 上限：blank类型页面的总数量 | - |
+| s_blank | int(10) | - | No | 0 | 实际：blank类型页面的总数量 | - |
+| n_category | int(10) | - | No | 100 | 上限：栏目的总数量 | - |
+| s_category | int(10) | - | No | 0 | 实际：总栏目数 | - |
+| n_fragment | int(10) | - | No | 100 | 上限：碎片的总数量 | - |
+| s_fragment | int(10) | - | No | 0 | 实际：碎片的总数量 |  - |
+| n_pic | int(10) | - | No | 100 | 上限：图片总数量 | - |
+| s_pic | int(10) | - | No | 0 | 实际：图片的总数量 | - |
+| s_pv| int(10) | - | No | 0 | 昨日pv总量 | - |
+
+## 索引
+| name | columns | desc |
+| ---- | ------- | ---- |
+|
+
+## 缓存
+| key | type | desc |
+| --- | ---- | ---- |
+|
+## 备注
+1. 索引和缓存相关信息将来补充
 
