@@ -163,18 +163,23 @@ run.sh
 
 | name | type | length | can be null | default | desc | dict |
 | ---- | ---- | ------ | ----------- | ------- | ---- | ---- |
-| site_id | bigint(10) | - | No | - |  站点ID，主键 | - |
-| n_page | int(10) | - | No | 100 | 上限：页面的总数量 | - |
-| s_page | int(10) | - | No | 0 | 实际：页面的总数量 | - |
-| n_blank | int(10) | - | No | 100 | 上限：blank类型页面的总数量 | - |
-| s_blank | int(10) | - | No | 0 | 实际：blank类型页面的总数量 | - |
-| n_category | int(10) | - | No | 100 | 上限：栏目的总数量 | - |
-| s_category | int(10) | - | No | 0 | 实际：总栏目数 | - |
-| n_fragment | int(10) | - | No | 100 | 上限：碎片的总数量 | - |
-| s_fragment | int(10) | - | No | 0 | 实际：碎片的总数量 |  - |
-| n_pic | int(10) | - | No | 100 | 上限：图片总数量 | - |
-| s_pic | int(10) | - | No | 0 | 实际：图片的总数量 | - |
-| s_pv| int(10) | - | No | 0 | 昨日pv总量 | - |
+| site_id | bigint(10) | - | No | - | 站点ID，主键 |-|
+| app_name | varchar(200) | - | No | - | 轻应用名称 | - |
+| app_logo | varchar(200) | - | No | - | 轻应用logo url | - |
+| app_query | varchar(45) | - | No | - | 轻应用关键词 | - |
+| app_url | varchar(200) | - | No | - |轻应用首页url | - |
+| app_desc | varchar(200) | - | No | - | 轻应用描述信息 | - |
+| email | varchar(45) | - | No | - | 服务商商户邮箱地址 | - |
+| phone | varchar(45) | - | No | - | 服务商商户手机号码 | - |
+| app_id |varchar(200) | - | YES | NULL | 轻应用id | - |
+| app_status | tinyint(1) | - | YES | NULL | 轻应用状态 | 2审核中3审核不通过4审核通过7管理员下线9管理员删除 |
+| create_time | int(10) | - | No | - | 新建时间 | - |
+| update_time | int(10) | - | No | - | 更新时间 | - |
+| status | tinyint(10) | - | No | - | 状态 | 0删除 1正常 |
+| app_verify_code | varchar(200) | - | No | - | 用于加载统计监控js的验证code | - |
+| app_monitor_code | varchar(200) | - | No | - | 用户加载监控js的code | - |
+| verification_commit_time | int(10) | - | No | - | 审核提交时间 | - |
+| verification_finish_time | int(10) | - | No | - | 审核结束时间 | - |
 
 ## 索引
 | name | columns | desc |
