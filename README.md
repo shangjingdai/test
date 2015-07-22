@@ -156,3 +156,19 @@ Icon?
 ehthumbs.db  
 Thumbs.db  
 run.sh
+
+| name | type | length | can be null | default | desc | dict |
+| ---- | ---- | ------ | ----------- | ------- | ---- | ---- |
+| page_id | bigint(10) | - | No | - | 页面ID，主键 | 随机数1000000000-9999999999 |
+| site_id | bigint(10) | - | No | - | 页面所属站点的id | - |
+| page_url | varchar(50) | - | No | - | 页面URL字符串 | - |
+| type | tinyint(1) | - | No | - | 页面类型 | 0:blank, 1:blank_template, 2:post, 3:post_template,4: poster,5: post_category |
+| tag_id | int(10) | - | No | 0 | 标签ID，用于分类 | - |
+| title | varchar(50) | - | No | - | 页面标题 | - |
+| seo_keyword | varchar(50) | - | No | - | 站点SEO关键词 | - |
+| seo_description | varchar(100) | - | No | - | 站点SEO描述 | - |
+| status | tinyint(1) | - | No | 1 | 页面状态 |  1 草稿, 2提交待审核(预留状态，暂时不用), 3审核通过并发布, 4审核未通过, 5删除,6下线 |
+| create_time | int(10) | - | No | 0 | 创建时间 | - |
+| update_time | int(10) | - | No | 0 | 更新时间 | - |
+| publish_time | int(10) | - | No | 0 | 发布时间 | - |
+
